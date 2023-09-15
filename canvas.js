@@ -48,15 +48,15 @@ var mouse = {
     y: undefined
 }
 
-var maxRadius = 40
-var minRadius = 2
+var maxRadius = 20
+// var minRadius = 2
 
 var colorArray = [
-    '#14140F',
-    '#053D38',
-    '#34675C',
-    '#A3CCAB',
-    '#F26800',
+    '#191726',
+    '#121D40',
+    '#295073',
+    '#517C8C',
+    '#E8F2D0',
 ]
 
 window.addEventListener('mousemove',
@@ -103,10 +103,10 @@ function Circle(x, y, dx, dy, radius) {
         this.y += this.dy;
 
         // interactivity
-        if (mouse.x - this.x < 50 &&
-            mouse.x - this.x > -50 &&
-            mouse.y - this.y < 50 &&
-            mouse.y - this.y > -50) {
+        if (mouse.x - this.x < 40 &&
+            mouse.x - this.x > -40 &&
+            mouse.y - this.y < 40 &&
+            mouse.y - this.y > -40) {
             if (this.radius < maxRadius) {
                 this.radius += 1
             }
@@ -132,7 +132,7 @@ function init() {
     circleArray = [];
     
     for (var i = 0; i < 2000; i++) {
-        var radius = Math.random() * 3 + 1;
+        var radius = Math.random() * 4 + 1;
         var x = Math.random() * (innerWidth - radius * 2) + radius
         var y = Math.random() * (innerHeight - radius * 2) + radius;
         var dx = (Math.random() - 0.5);
